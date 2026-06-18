@@ -23,8 +23,6 @@ type
     usuariosnome: TStringField;
     usuariosusuario: TStringField;
     usuarioslogado: TIntegerField;
-    conexao: TFDConnection;
-    validaentrada: TFDQuery;
   private
     { Private declarations }
   public

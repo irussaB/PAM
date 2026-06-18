@@ -1,0 +1,92 @@
+object dm: Tdm
+  OldCreateOrder = False
+  Height = 333
+  HorizontalOffset = 296
+  VerticalOffset = 250
+  Width = 341
+  object conexao: TZConnection
+    ControlsCodePage = cCP_UTF8
+    Properties.Strings = (
+      'RawStringEncoding=DB_CP'
+    )
+    DisableSavepoints = False
+    Port = 0
+    Database = 'C:\Lazarus-Div1\bdlanchonete.db'
+    Protocol = 'sqlite'
+    LibraryLocation = 'C:\Lazarus-Div1\sqlite3.dll'
+    Left = 136
+    Top = 40
+  end
+  object usuarios: TZQuery
+    Connection = conexao
+    SQL.Strings = (
+      'Select * From usuarios;'
+    )
+    Params = <>
+    DataSource = dsusuarios
+    Left = 136
+    Top = 112
+    object usuariosusuid: TZInt64Field
+      DisplayLabel = 'ID'
+      FieldKind = fkData
+      FieldName = 'usuid'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object usuariosusunome: TZRawCLobField
+      DisplayLabel = 'Nome'
+      FieldKind = fkData
+      FieldName = 'usunome'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftMemo
+      Transliterate = False
+    end
+    object usuariosusulogin: TZRawCLobField
+      DisplayLabel = 'Usuario'
+      FieldKind = fkData
+      FieldName = 'usulogin'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftMemo
+      Transliterate = False
+    end
+    object usuariosususenha: TZRawCLobField
+      DisplayLabel = 'Senha'
+      FieldKind = fkData
+      FieldName = 'ususenha'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftMemo
+      Transliterate = False
+    end
+    object usuariosusulogado: TZBooleanField
+      DisplayLabel = 'logado'
+      FieldKind = fkData
+      FieldName = 'usulogado'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayValues = 'Sim;Não'
+    end
+  end
+  object dsusuarios: TDataSource
+    DataSet = usuarios
+    Left = 136
+    Top = 192
+  end
+end

@@ -54,20 +54,4 @@ object dm: Tdm
       FieldName = 'logado'
     end
   end
-  object conexao: TFDConnection
-    Params.Strings = (
-      'Database=C:\PAM\bdlanchonete.db'
-      'DriverID=sQLite')
-    Connected = True
-    LoginPrompt = False
-    Left = 464
-    Top = 40
-  end
-  object validaentrada: TFDQuery
-    Connection = conexao
-    SQL.Strings = (
-      'select * from usuarios;')
-    Left = 464
-    Top = 160
-  end
 end

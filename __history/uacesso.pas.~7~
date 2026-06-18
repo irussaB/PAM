@@ -28,7 +28,7 @@ type
     logado:boolean;
     jsnobj: TJSONObject; // jsonencode - PHP
     procedure geraJSON();
-    procedure gravaUsuario();
+    //procedure gravaUsuario();
   public
     { Public declarations }
   end;
@@ -76,11 +76,6 @@ begin
   finally
     jsnobj.DisposeOf;
   end;
-end;
-
-procedure Tfrmacesso.gravaUsuario;
-begin
-
 end;
 
 end.

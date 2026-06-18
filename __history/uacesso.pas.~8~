@@ -78,9 +78,4 @@ begin
   end;
 end;
 
-procedure Tfrmacesso.gravaUsuario;
-begin
-
-end;
-
 end.

@@ -28,7 +28,6 @@ type
     logado:boolean;
     jsnobj: TJSONObject; // jsonencode - PHP
     procedure geraJSON();
-    procedure gravaUsuario();
   public
     { Public declarations }
   end;
@@ -65,22 +64,17 @@ begin
      dm.RESTRequest1.Execute;
      //carga do usuário logado
       ShowMessage(IntToStr(dm.usuariosid.AsInteger) + '-' + dm.usuariosnome.AsString);
-     // if(dm.usuariosid.ASInteger<>0)then
-     //   begin
-     //     frmmenu.Show;
-     //   end
-     // else
-     //   begin
-     //     ShowMessage('Usuário ou senha incorretos');
-     //   end;
+      if(dm.usuariosid.ASInteger<>0)then
+        begin
+          frmmenu.Show;
+        end
+      else
+        begin
+          ShowMessage('Usuário ou senha incorretos');
+        end;
   finally
     jsnobj.DisposeOf;
   end;
-end;
-
-procedure Tfrmacesso.gravaUsuario;
-begin
-
 end;
 
 end.
